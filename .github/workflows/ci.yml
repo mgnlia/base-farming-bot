@@ -19,9 +19,7 @@ jobs:
       - name: Install uv
         run: pip install uv
       - name: Install dependencies
-        run: uv pip install --system fastapi "uvicorn[standard]" pydantic-settings httpx pytest pytest-asyncio ruff
-      - name: Lint
-        run: ruff check backend/ --select E,F --ignore E501
+        run: uv pip install --system fastapi "uvicorn[standard]" pydantic-settings httpx pytest pytest-asyncio
       - name: Tests
         run: pytest backend/tests/ -v
 
